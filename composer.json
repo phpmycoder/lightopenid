@@ -4,7 +4,6 @@
     "keywords": ["openid"],
     "homepage": "https://github.com/phpmycoder/lightopenid/",
     "license": "MIT",
-    "version": "0.7.0",
     "require": {
         "php": ">=5.2.3"
     },
