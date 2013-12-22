@@ -5,6 +5,6 @@ This is a modified version of [LightOpenId by mewp on Gitorious](https://gitorio
     $openid = new LightOpenId('localhost'); // replace with your host
     $openid->version = 2;
     $openid->server = 'https://www.google.com/a/YOURDOMAIN.com/o8/ud?be=o8';
-    $openid->identity = 'http://specs.openid.net/auth/2.0/identifier_select';
+    $openid->identifier_select = true;
     
 For more usage examples, see `example.php` and `example-google.php`.

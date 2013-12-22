@@ -57,10 +57,12 @@ class LightOpenID
          , $cainfo = null
          , $data
          , $server
-         , $version;
+         , $version
+         , $identifier_select = false
+         , $ax = false
+         , $sreg = false;
     private $identity, $claimed_id;
-    protected $trustRoot, $aliases, $identifier_select = false
-            , $ax = false, $sreg = false, $setup_url = null, $headers = array();
+    protected $trustRoot, $aliases, $setup_url = null, $headers = array();
     static protected $ax_to_sreg = array(
         'namePerson/friendly'     => 'nickname',
         'contact/email'           => 'email',
