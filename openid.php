@@ -724,7 +724,7 @@ class LightOpenID
             return false;
         }
 
-        $server = $this->discover($this->claimed_id);
+        $server = isset($this->server) ? $this->server : $this->discover($this->claimed_id);
 
         foreach (explode(',', $this->data['openid_signed']) as $item) {
             # Checking whether magic_quotes_gpc is turned on, because
