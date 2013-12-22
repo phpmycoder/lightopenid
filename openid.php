@@ -60,7 +60,8 @@ class LightOpenID
          , $version
          , $identifier_select = false
          , $ax = false
-         , $sreg = false;
+         , $sreg = false
+         , $additionalParams = array();
     private $identity, $claimed_id;
     protected $trustRoot, $aliases, $setup_url = null, $headers = array();
     static protected $ax_to_sreg = array(
@@ -626,6 +627,8 @@ class LightOpenID
             'openid.identity'   => $this->identity,
             'openid.trust_root' => $this->trustRoot,
             ) + $this->sregParams();
+        
+        $params = array_merge($this->additionalParams, $params);
 
         return $this->build_url(parse_url($this->server)
                                , array('query' => http_build_query($params, '', '&')));
@@ -658,6 +661,8 @@ class LightOpenID
             $params['openid.identity'] = $this->identity;
             $params['openid.claimed_id'] = $this->claimed_id;
         }
+        
+        $params = array_merge($this->additionalParams, $params);
 
         return $this->build_url(parse_url($this->server)
                                , array('query' => http_build_query($params, '', '&')));
