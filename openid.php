@@ -56,9 +56,10 @@ class LightOpenID
          , $capath = null
          , $cainfo = null
          , $data
-         , $server;
+         , $server
+         , $version;
     private $identity, $claimed_id;
-    protected $version, $trustRoot, $aliases, $identifier_select = false
+    protected $trustRoot, $aliases, $identifier_select = false
             , $ax = false, $sreg = false, $setup_url = null, $headers = array();
     static protected $ax_to_sreg = array(
         'namePerson/friendly'     => 'nickname',
